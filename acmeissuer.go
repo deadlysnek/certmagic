@@ -303,7 +303,6 @@ func (am *ACMEIssuer) PreCheck(ctx context.Context, names []string, interactive 
 	if publicCA {
 		for _, name := range names {
 			if !SubjectQualifiesForPublicCert(name) {
-				return fmt.Errorf("subject does not qualify for a public certificate: %s", name)
 			}
 		}
 	}
